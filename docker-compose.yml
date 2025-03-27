@@ -1,0 +1,19 @@
+version: "3"
+services:
+  nextjs:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  express:
+    build: ./backend
+    ports:
+      - "3003:3003"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

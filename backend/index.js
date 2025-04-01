@@ -24,13 +24,13 @@ app.use(helmet({
   },
 }));
 
-// Connect to DB
+// connect to DB
 const pool = mysql.createPool({
-  host: "mysql", // Use the Docker service name for MySQL
+  host: "mysql",
   user: "root",
-  password: "Snobben21", // Add your MySQL root password here
-  database: "bankdb",
-  port: 3306, // Use the default MySQL port
+  password: "root",
+  database: "dockeraws",
+  port: 3306,
 });
 
 // Helper function to make code look nicer
@@ -160,7 +160,7 @@ app.post('/me/accounts/transactions', async (req, res) => {
   }
 });
 
-// Other endpoints...
+
 
 app.listen(port, () => {
   console.log(`Backend server is running on http://localhost:${port}`);
